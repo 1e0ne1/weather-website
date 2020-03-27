@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode.js')
 const forecast = require('./utils/forecast.js')
 
 const app = express()
+const port = process.env.PORT || 3000 //for heroku
 
 //define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -108,7 +109,7 @@ app.get('*', (req, res) => {
 //app.com/help
 //app.com/about
 
-//start the server on port 3000
-app.listen(3000, () => {
-    console.log('server started')
+//start the server on port 3000. When uploading to heroku define const port
+app.listen(port, () => {
+    console.log('server started on port ' + port)
 })
