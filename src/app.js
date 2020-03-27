@@ -25,21 +25,22 @@ app.use(express.static(publicDirectoryPath)) //load static pages
 app.get('', (req, res) => {
     res.render('index', { //request views/index.hbs
         title: 'Weather App',
-        name: 'Leonel'
+        name: 'Leonel Velasquez'
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About me',
-        name: 'Leonel'
+        name: 'Leonel Velasquez',
+        description: 'This site was created by Leonel Velasquez in NodeJs using Express. It uses data form mapbox.com and darksky.net'
     });
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help Page',
-        name: 'Leonel',
+        name: 'Leonel Velasquez',
         helpText: 'This is the help text that is going to be displayed'
     });
 })
